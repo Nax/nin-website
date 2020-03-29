@@ -9,7 +9,7 @@ if (userAgent.match("Windows NT") || userAgent.match("Win32") || userAgent.match
   } else {
     os = 'win32';
   }
-} else if (userAgent.match("MacIntel")) {
+} else if (userAgent.match("MacIntel") || userAgent.match("Macintosh") || userAgent.match("Intel Mac") || userAgent.match("Mac OS X")) {
   os = 'mac';
 }
 
