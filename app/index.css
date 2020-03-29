@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+@import "~reset-css";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: #333;
+}
+
+html {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 125%;
+}
+
+.site {
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+  margin-bottom: 3em;
+  background: #ddd;
+  border-radius: 0.5em;
+  padding: 1em;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3em;
+}
+
+header a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  font-size: 3em;
+}
+
+header img {
+  width: 50%;
+}
+
+main {
+  padding: 2em;
+}
+
+h2 {
+  font-weight: bolder;
+  font-size: 1.50em;
+  margin-bottom: 0.5em;
+  margin-top: 3em;
+}
+
+p {
+  margin-bottom: 2em;
+  text-align: justify;
+}
+
+footer {
+  text-align: center;
+  color: white;
+  margin: 3em;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  margin: 0.5em;
+  width: 31%;
+}
+
+.downloads {
+  display: flex;
+  flex-direction: column;
+  background: #bbb;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}
+
+.downloads li {
+  margin: 0.5em;
+}
+
+.downloads .prefered {
+  display: inline-block;
+  order: -1;
+  background: hsl(120deg, 80%, 40%);
+  border-radius: 0.25em;
+  font-size: 1.5em;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+
+.downloads .prefered a {
+  color: #fff;
+}
+
+.downloads a {
+  text-decoration: none;
+  color: hsl(240deg, 80%, 50%);
+}
+
+.downloads a:hover {
+  text-decoration: underline;
+}
