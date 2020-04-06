@@ -100,6 +100,7 @@ footer {
 }
 
 .downloads .prefered a {
+  line-height: 1em;
   color: #fff;
 }
 

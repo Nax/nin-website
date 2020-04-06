@@ -11,6 +11,8 @@ if (userAgent.match("Windows NT") || userAgent.match("Win32") || userAgent.match
   }
 } else if (userAgent.match("MacIntel") || userAgent.match("Macintosh") || userAgent.match("Intel Mac") || userAgent.match("Mac OS X")) {
   os = 'mac';
+} else if (userAgent.match("Linux")) {
+  os = 'linux';
 }
 
 if (os) {
