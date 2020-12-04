@@ -11,7 +11,7 @@ html, body {
 }
 
 html {
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
   font-size: 125%;
 }
 
@@ -82,26 +82,35 @@ footer {
   flex-direction: column;
   background: #bbb;
   border-radius: 0.5em;
-  padding: 0.5em;
+  padding: 0.5rem;
 }
 
 .downloads li {
-  margin: 0.5em;
+  margin: 0.35rem;
 }
 
 .downloads .prefered {
-  display: inline-block;
   order: -1;
-  background: hsl(120deg, 80%, 40%);
-  border-radius: 0.25em;
-  font-size: 1.5em;
-  padding: 0.5em;
-  margin-bottom: 1em;
 }
 
 .downloads .prefered a {
-  line-height: 1em;
+  display: inline-block;
+  text-align: center;
+  background: hsl(120deg, 60%, 40%);
+  font-size: 1.2em;
+  border-radius: 0.25em;
+  line-height: 2em;
+  width: 100%;
   color: #fff;
+}
+
+.downloads .prefered a:hover {
+  text-decoration: none;
+  background: hsl(120deg, 60%, 45%);
+}
+
+.downloads .prefered a:active {
+  background: hsl(120deg, 60%, 30%);
 }
 
 .downloads a {

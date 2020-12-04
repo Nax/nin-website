@@ -8,7 +8,17 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const env = process.env.NODE_ENV || 'development';
 const dev = (env !== 'production');
 
-const VERSION = '0.7.2';
+const TEMPLATE = {
+  VERSION: '0.8.0',
+  GALLERY: [
+    { src: 'mario.png', alt: 'Super Mario Bros.' },
+    { src: 'kirby.png', alt: 'Kirby\'s Adventure' },
+    { src: 'zelda.png', alt: 'The Legend of Zelda' },
+    { src: 'megaman2.png', alt: 'Megaman 2' },
+    { src: 'mario3.png', alt: 'Super Mario Bros. 3' },
+    { src: 'punchout.png', alt: 'Punch-Out!!' },
+  ]
+};
 
 module.exports = {
   mode: (dev ? 'development' : 'production'),
@@ -23,14 +33,17 @@ module.exports = {
   module: {
     rules: [{
       test: /\.css$/,
-      loaders: [
+      use: [
         dev ? 'style-loader' : MiniCssExtractPlugin.loader,
         { loader: 'css-loader', options: { importLoaders: 1 } },
         'postcss-loader'
       ]
     }, {
       test: /\.(png|gif|jpe?g|svg)$/,
-      use: { loader: 'file-loader', options: { name: (dev ? '_assets/[name].[ext]' : '_assets/[contenthash].[ext]') } }
+      use: [
+        { loader: 'file-loader', options: { name: (dev ? '_assets/[name].[ext]' : '_assets/[contenthash].[ext]') } },
+        'img-loader',
+      ]
     }]
   },
   plugins: [
@@ -61,7 +74,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './app/index.html.ejs',
-      templateParameters: { VERSION }
+      templateParameters: TEMPLATE
     })
   ]
 };

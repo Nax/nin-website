@@ -1,49 +1,60 @@
 <!doctype html>
 <html lang="en-US">
-  <head>
-    <title>Nin &mdash; NES Emulator</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-  </head>
-  <body>
-    <div class="site">
-      <header>
-        <a href="/">
-          <img alt="Nin Logo" src="<%=require('./assets/logo.png').default%>">
-          <h1>Nin &mdash; <%= VERSION %></h1>
-        </a>
-      </header>
-      <main>
-        <h2>About</h2>
-        <p>Nin is an advanced Nintendo Entertainement System and Famicom emulator that is actively being developped.</p>
-        <p>
-          Right now, the emulator is not very polished on the UX side, but can run many games without issues.
-          A gamepad is supported. The exact mapping will depend on the vendor's layout.
-          On a keyboard, the arrows are mapped to the NES D-Pad, Space is Select, Enter is Start, Z is A and X is B.
-          Multiple controllers or other kinds of controller are not currently supported.
-        </p>
-        <h2>Gallery</h2>
-        <div class="gallery">
-          <img src="<%= require('./assets/gallery/mario.png').default%>" alt="Super Mario Bros.">
-          <img src="<%= require('./assets/gallery/kirby.png').default%>" alt="Kirby's Adventure">
-          <img src="<%= require('./assets/gallery/zelda.png').default%>" alt="The Legend of Zelda">
-          <img src="<%= require('./assets/gallery/megaman2.png').default%>" alt="Megaman 2">
-          <img src="<%= require('./assets/gallery/mario3.png').default%>" alt="Super Mario Bros. 3">
-          <img src="<%= require('./assets/gallery/punchout.png').default%>" alt="Punch-Out!!">
-        </div>
-        <h2>Downloads</h2>
-        <ul class="downloads">
-          <li id="download-win64"><a href="https://github.com/Nax/nin/releases/download/v<%= VERSION %>/Nin-<%= VERSION %>-win64.zip">Nin v<%= VERSION %> &mdash; Windows 64-bit (zip)</a></li>
-          <li id="download-win32"><a href="https://github.com/Nax/nin/releases/download/v<%= VERSION %>/Nin-<%= VERSION %>-win32.zip">Nin v<%= VERSION %> &mdash; Windows 32-bit (zip)</a></li>
-          <li id="download-mac"><a href="https://github.com/Nax/nin/releases/download/v<%= VERSION %>/Nin-<%= VERSION %>-mac.dmg">Nin v<%= VERSION %> &mdash; macOS 64-bit (dmg)</a></li>
-          <li id="download-linux"><a href="https://github.com/Nax/nin/releases/download/v<%= VERSION %>/Nin-<%= VERSION %>-linux.deb">Nin v<%= VERSION %> &mdash; Linux 64-bit (deb)</a></li>
-          <li id="download-src-targz"><a href="https://github.com/Nax/nin/archive/v<%= VERSION %>.tar.gz">Nin v<%= VERSION %> &mdash; Source Code (tar gz)</a></li>
-          <li id="download-src-zip"><a href="https://github.com/Nax/nin/archive/v<%= VERSION %>.zip">Nin v<%= VERSION %> &mdash; Source Code (zip)</a></li>
-          <li id="download-older"><a href="https://github.com/nax/nin/releases">Older versions</a></li>
-        </ul>
-      </main>
-    </div>
-    <footer>
-      &copy; 2018-2020 Maxime Bacoux. All Rights Reserved.
-    </footer>
-  </body>
+
+<head>
+  <title>Nin &mdash; NES Emulator</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+
+<body>
+  <div class="site">
+    <header>
+      <a href="/">
+        <img alt="Nin Logo" src="<%=require('./assets/logo.png').default %>">
+        <h1>Nin &mdash; <%= VERSION %></h1>
+      </a>
+    </header>
+    <main>
+      <h2>About</h2>
+      <p>Nin is an advanced Nintendo Entertainement System and Famicom emulator that is actively being developped.</p>
+      <p>
+        Right now, the emulator is not very polished on the UX side, but can run many games without issues.
+        A gamepad is supported. The exact mapping will depend on the vendor's layout.
+        On a keyboard, the arrows are mapped to the NES D-Pad, Space is Select, Enter is Start, Z is A and X is B.
+        Multiple controllers or other kinds of controller are not currently supported.
+      </p>
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <% for (img of GALLERY) { %>
+        <img src="<%= require(`./assets/gallery/${img.src}`).default %>" alt="<%= img.alt %>" title="<%= img.alt %>">
+        <% } %>
+      </div>
+      <h2>Downloads</h2>
+      <ul class="downloads">
+        <li id="download-win64">
+          <a href="https://github.com/Nax/nin/releases/download/v<%= VERSION %>/Nin-<%= VERSION %>-win64.zip">Nin
+            v<%= VERSION %> &mdash; Windows 64-bit (zip)</a>
+        </li>
+        <li id="download-win32"><a
+            href="https://github.com/Nax/nin/releases/download/v<%= VERSION %>/Nin-<%= VERSION %>-win32.zip">Nin
+            v<%= VERSION %> &mdash; Windows 32-bit (zip)</a></li>
+        <li id="download-mac"><a
+            href="https://github.com/Nax/nin/releases/download/v<%= VERSION %>/Nin-<%= VERSION %>-mac.dmg">Nin
+            v<%= VERSION %> &mdash; macOS 64-bit (dmg)</a></li>
+        <li id="download-linux"><a
+            href="https://github.com/Nax/nin/releases/download/v<%= VERSION %>/Nin-<%= VERSION %>-linux.deb">Nin
+            v<%= VERSION %> &mdash; Linux 64-bit (deb)</a></li>
+        <li id="download-src-targz"><a href="https://github.com/Nax/nin/archive/v<%= VERSION %>.tar.gz">Nin
+            v<%= VERSION %> &mdash; Source Code (tar gz)</a></li>
+        <li id="download-src-zip"><a href="https://github.com/Nax/nin/archive/v<%= VERSION %>.zip">Nin v<%= VERSION %>
+            &mdash; Source Code (zip)</a></li>
+        <li id="download-older"><a href="https://github.com/nax/nin/releases">Older versions</a></li>
+      </ul>
+    </main>
+  </div>
+  <footer>
+    &copy; 2018-2020 Maxime Bacoux. All Rights Reserved.
+  </footer>
+</body>
+
 </html>
